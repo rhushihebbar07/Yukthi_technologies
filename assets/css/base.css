@@ -1,0 +1,267 @@
+/* ==========================================================
+   YUKTHI TECHNOLOGIES
+   Base Styles
+========================================================== */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+    -webkit-text-size-adjust:100%;
+}
+
+body{
+    font-family:var(--body-font);
+    font-size:var(--fs-16);
+    background:var(--background);
+    color:var(--text);
+    line-height:1.7;
+    overflow-x:hidden;
+    transition:background .3s,color .3s;
+}
+
+/* Typography */
+
+h1,h2,h3,h4,h5,h6{
+    font-family:var(--heading-font);
+    font-weight:700;
+    color:var(--text);
+    line-height:1.2;
+}
+
+h1{
+    font-size:clamp(2.8rem,5vw,5rem);
+}
+
+h2{
+    font-size:clamp(2rem,4vw,3.5rem);
+}
+
+h3{
+    font-size:clamp(1.5rem,3vw,2.4rem);
+}
+
+h4{
+    font-size:1.4rem;
+}
+
+h5{
+    font-size:1.2rem;
+}
+
+h6{
+    font-size:1rem;
+}
+
+p{
+    color:var(--text-light);
+    margin-bottom:1rem;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+    transition:var(--transition);
+}
+
+ul{
+    list-style:none;
+}
+
+img{
+    display:block;
+    width:100%;
+    max-width:100%;
+}
+
+button{
+    border:none;
+    cursor:pointer;
+    font-family:inherit;
+}
+
+input,
+textarea,
+select{
+    font-family:inherit;
+}
+
+/* Container */
+
+.container{
+    width:min(92%,var(--container));
+    margin:auto;
+}
+
+/* Sections */
+
+section{
+    padding:100px 0;
+}
+
+/* Buttons */
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    height:54px;
+
+    padding:0 28px;
+
+    border-radius:var(--radius-round);
+
+    background:var(--gradient-primary);
+
+    color:#fff;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+    box-shadow:var(--shadow-md);
+}
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.btn-outline{
+
+    background:transparent;
+
+    color:var(--primary);
+
+    border:2px solid var(--primary);
+
+}
+
+.btn-outline:hover{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+/* Cards */
+
+.card{
+
+    background:var(--surface);
+
+    border-radius:var(--radius-xl);
+
+    padding:32px;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+/* Glass */
+
+.glass{
+
+    background:var(--glass-bg);
+
+    border:1px solid var(--glass-border);
+
+    backdrop-filter:blur(var(--glass-blur));
+
+    -webkit-backdrop-filter:blur(var(--glass-blur));
+
+}
+
+/* Utilities */
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.flex{
+
+    display:flex;
+
+}
+
+.grid{
+
+    display:grid;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:var(--surface);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--secondary);
+
+}
+
+/* Text Selection */
+
+::selection{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+/* Loader */
+
+body.loading{
+
+    overflow:hidden;
+
+}

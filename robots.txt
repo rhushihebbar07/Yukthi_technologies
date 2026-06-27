@@ -1,0 +1,20 @@
+# ===============================
+# Yukthi Technologies Robots File
+# ===============================
+
+User-agent: *
+
+# Allow all important pages
+Allow: /
+
+# Block admin / system files (if added later)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /config/
+Disallow: /assets/js/private/
+
+# Sitemap (update when you create sitemap.xml)
+Sitemap: https://your-domain.com/sitemap.xml
+
+# Crawl delay (optional for safety)
+Crawl-delay: 2

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>404 - Page Not Found | Yukthi Technologies</title>
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<style>
+
+body{
+display:flex;
+align-items:center;
+justify-content:center;
+height:100vh;
+text-align:center;
+background:#0f172a;
+color:white;
+overflow:hidden;
+}
+
+.error-box{
+max-width:600px;
+padding:40px;
+animation: float 3s ease-in-out infinite;
+}
+
+.error-code{
+font-size:120px;
+font-weight:800;
+color:#38bdf8;
+margin-bottom:10px;
+}
+
+.error-title{
+font-size:28px;
+margin-bottom:10px;
+}
+
+.error-text{
+opacity:0.7;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:12px 25px;
+background:#38bdf8;
+color:#000;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+@keyframes float{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0px);}
+}
+
+.circle{
+position:absolute;
+width:200px;
+height:200px;
+background:#38bdf8;
+filter:blur(120px);
+opacity:0.3;
+border-radius:50%;
+}
+
+.c1{top:10%;left:10%;}
+.c2{bottom:10%;right:10%;}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="circle c1"></div>
+<div class="circle c2"></div>
+
+<div class="error-box">
+
+<div class="error-code">404</div>
+
+<div class="error-title">Page Not Found</div>
+
+<div class="error-text">
+The page you are looking for doesn't exist or has been moved.
+</div>
+
+<a href="index.html" class="btn">
+
+🏠 Back to Home
+
+</a>
+
+</div>
+
+</body>
+
+</html>

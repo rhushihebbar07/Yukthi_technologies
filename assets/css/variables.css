@@ -1,0 +1,247 @@
+/* =========================================================
+   YUKTHI TECHNOLOGIES
+   Design System
+   Version 1.0
+=========================================================*/
+
+/* ===============================
+   GOOGLE FONTS
+================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap');
+
+/* ===============================
+   ROOT VARIABLES
+================================*/
+
+:root{
+
+/* ===============================
+   BRAND COLORS
+================================*/
+
+--primary:#2563EB;
+--primary-light:#3B82F6;
+--primary-dark:#1D4ED8;
+
+--secondary:#06B6D4;
+--secondary-light:#22D3EE;
+--secondary-dark:#0891B2;
+
+--accent:#7C3AED;
+--accent-light:#A78BFA;
+--accent-dark:#6D28D9;
+
+--success:#10B981;
+--warning:#F59E0B;
+--danger:#EF4444;
+--info:#0EA5E9;
+
+/* ===============================
+   BACKGROUND
+================================*/
+
+--background:#F8FAFC;
+--surface:#FFFFFF;
+--surface-2:#F1F5F9;
+--surface-3:#E2E8F0;
+
+/* ===============================
+   DARK COLORS
+================================*/
+
+--dark:#0F172A;
+--dark-2:#1E293B;
+--dark-3:#334155;
+
+/* ===============================
+   TEXT
+================================*/
+
+--text:#0F172A;
+--text-light:#475569;
+--text-muted:#94A3B8;
+--text-white:#FFFFFF;
+
+/* ===============================
+   BORDERS
+================================*/
+
+--border:#CBD5E1;
+--border-light:#E2E8F0;
+
+/* ===============================
+   TYPOGRAPHY
+================================*/
+
+--heading-font:'Poppins',sans-serif;
+--body-font:'Inter',sans-serif;
+--number-font:'Space Grotesk',sans-serif;
+
+/* ===============================
+   FONT SIZES
+================================*/
+
+--fs-12:0.75rem;
+--fs-14:0.875rem;
+--fs-16:1rem;
+--fs-18:1.125rem;
+--fs-20:1.25rem;
+--fs-24:1.5rem;
+--fs-30:1.875rem;
+--fs-36:2.25rem;
+--fs-48:3rem;
+--fs-60:3.75rem;
+--fs-72:4.5rem;
+
+/* ===============================
+   FONT WEIGHT
+================================*/
+
+--fw-300:300;
+--fw-400:400;
+--fw-500:500;
+--fw-600:600;
+--fw-700:700;
+--fw-800:800;
+
+/* ===============================
+   SPACING
+================================*/
+
+--space-4:4px;
+--space-8:8px;
+--space-12:12px;
+--space-16:16px;
+--space-20:20px;
+--space-24:24px;
+--space-32:32px;
+--space-40:40px;
+--space-48:48px;
+--space-64:64px;
+--space-80:80px;
+--space-96:96px;
+--space-120:120px;
+
+/* ===============================
+   BORDER RADIUS
+================================*/
+
+--radius-sm:6px;
+--radius-md:12px;
+--radius-lg:18px;
+--radius-xl:24px;
+--radius-2xl:36px;
+--radius-round:999px;
+
+/* ===============================
+   SHADOWS
+================================*/
+
+--shadow-sm:0 2px 8px rgba(0,0,0,.08);
+--shadow-md:0 8px 20px rgba(0,0,0,.12);
+--shadow-lg:0 20px 40px rgba(0,0,0,.18);
+--shadow-xl:0 40px 80px rgba(0,0,0,.25);
+
+/* ===============================
+   GLASS
+================================*/
+
+--glass-bg:rgba(255,255,255,.08);
+--glass-border:rgba(255,255,255,.2);
+--glass-blur:20px;
+
+/* ===============================
+   GRADIENTS
+================================*/
+
+--gradient-primary:linear-gradient(135deg,#2563EB,#06B6D4);
+
+--gradient-purple:linear-gradient(135deg,#7C3AED,#A855F7);
+
+--gradient-dark:linear-gradient(135deg,#0F172A,#1E293B);
+
+--gradient-light:linear-gradient(135deg,#F8FAFC,#E2E8F0);
+
+/* ===============================
+   CONTAINER
+================================*/
+
+--container:1280px;
+
+/* ===============================
+   NAVBAR
+================================*/
+
+--navbar-height:80px;
+
+/* ===============================
+   BUTTON
+================================*/
+
+--button-height:54px;
+
+/* ===============================
+   TRANSITION
+================================*/
+
+--transition-fast:.25s ease;
+--transition:.35s ease;
+--transition-slow:.5s ease;
+
+/* ===============================
+   Z INDEX
+================================*/
+
+--z-dropdown:100;
+--z-fixed:500;
+--z-modal:900;
+--z-loader:9999;
+
+}
+
+/* ===============================
+   DARK MODE
+================================*/
+
+[data-theme="dark"]{
+
+--background:#020617;
+--surface:#0F172A;
+--surface-2:#1E293B;
+--surface-3:#334155;
+
+--text:#F8FAFC;
+--text-light:#CBD5E1;
+--text-muted:#94A3B8;
+
+--border:#334155;
+--border-light:#475569;
+
+--glass-bg:rgba(15,23,42,.55);
+--glass-border:rgba(255,255,255,.08);
+
+}
+
+/* ===============================
+   BREAKPOINTS
+================================*/
+
+/*
+
+Mobile
+320px
+
+Tablet
+768px
+
+Laptop
+1024px
+
+Desktop
+1280px
+
+Ultra
+1536px
+
+*/
