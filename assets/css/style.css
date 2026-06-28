@@ -4,286 +4,553 @@
 @import url("components.css");
 @import url("animations.css");
 @import url("responsive.css");
-/* ==========================
-Maintenance Popup
-========================== */
+/* ==========================================================
+   MAINTENANCE POPUP
+========================================================== */
 
 .maintenance-overlay{
     position:fixed;
     inset:0;
-    background:rgba(5,10,25,.82);
-    backdrop-filter:blur(12px);
     display:flex;
     justify-content:center;
     align-items:center;
+    padding:20px;
+    background:rgba(5,10,25,.82);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
     z-index:999999;
-    animation:fadeIn .7s ease;
+    animation:fadeIn .6s ease;
 }
 
 .maintenance-popup{
 
+    position:relative;
+
     width:90%;
-    max-width:620px;
+    max-width:650px;
+    max-height:90vh;
+
+    overflow-y:auto;
+    overflow-x:hidden;
 
     background:rgba(255,255,255,.08);
+
     backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
 
-    border:1px solid rgba(255,255,255,.2);
+    border:1px solid rgba(255,255,255,.15);
 
-    border-radius:25px;
+    border-radius:24px;
 
     padding:40px;
 
-    text-align:center;
-
     color:#fff;
 
-    position:relative;
+    text-align:center;
 
-    overflow:hidden;
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.35);
 
-    animation:popup .8s cubic-bezier(.175,.885,.32,1.3);
+    animation:popup .7s cubic-bezier(.18,.89,.32,1.28);
 }
+
+/* Rotating Glow */
 
 .maintenance-popup::before{
 
-content:"";
+    content:"";
 
-position:absolute;
+    position:absolute;
 
-top:-50%;
+    inset:-60%;
 
-left:-50%;
+    background:linear-gradient(
+        45deg,
+        #2563eb,
+        #06b6d4,
+        #7c3aed,
+        #2563eb
+    );
 
-width:200%;
+    opacity:.12;
 
-height:200%;
+    animation:rotate 10s linear infinite;
 
-background:linear-gradient(45deg,#2563eb,#06b6d4,#7c3aed,#2563eb);
-
-animation:rotate 10s linear infinite;
-
-opacity:.12;
-
+    pointer-events:none;
 }
+
+/* Keep content above glow */
 
 .maintenance-popup>*{
-position:relative;
-z-index:2;
+
+    position:relative;
+
+    z-index:5;
 }
+
+/* Close Button */
+
+.close-popup{
+
+    position:absolute;
+
+    top:15px;
+
+    right:15px;
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    color:#fff;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    z-index:9999;
+}
+
+.close-popup:hover{
+
+    background:#2563eb;
+
+    transform:rotate(90deg) scale(1.1);
+}
+
+/* Rocket */
 
 .popup-icon{
 
-font-size:70px;
+    font-size:70px;
 
-animation:float 3s infinite;
+    margin-bottom:15px;
 
-margin-bottom:15px;
-
+    animation:float 3s ease-in-out infinite;
 }
+
+/* Heading */
 
 .maintenance-popup h2{
 
-font-size:34px;
+    font-size:34px;
 
-margin-bottom:15px;
+    font-weight:800;
 
-font-weight:800;
+    margin-bottom:15px;
 
+    line-height:1.2;
 }
 
 .subtitle{
 
-font-size:18px;
+    font-size:18px;
 
-opacity:.9;
+    opacity:.9;
 
-margin-bottom:20px;
-
+    margin-bottom:20px;
 }
+
+.maintenance-popup p{
+
+    font-size:16px;
+
+    line-height:1.8;
+}
+
+/* List */
 
 .maintenance-popup ul{
 
-list-style:none;
+    list-style:none;
 
-padding:0;
+    margin:25px 0;
 
-margin:25px 0;
-
+    padding:0;
 }
 
 .maintenance-popup li{
 
-padding:8px;
+    padding:8px 0;
 
-font-size:17px;
-
+    font-size:17px;
 }
+
+/* Contact */
 
 .contact-box{
 
-margin:25px 0;
+    margin:30px 0;
 
-padding:18px;
+    padding:18px;
 
-background:rgba(255,255,255,.08);
+    border-radius:15px;
 
-border-radius:15px;
+    background:rgba(255,255,255,.08);
 
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.contact-box strong{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-size:18px;
 }
 
 .contact-box a{
 
-color:#8fd3ff;
+    color:#7dd3fc;
 
-font-weight:bold;
+    text-decoration:none;
 
-text-decoration:none;
+    font-weight:600;
 
+    transition:.3s;
+
+    word-break:break-word;
 }
+
+.contact-box a:hover{
+
+    color:#fff;
+}
+
+/* Button */
 
 .continue-btn{
 
-margin-top:25px;
+    width:auto;
 
-padding:15px 35px;
+    min-width:240px;
 
-border:none;
+    margin-top:20px;
 
-border-radius:50px;
+    padding:15px 35px;
 
-background:linear-gradient(90deg,#2563eb,#06b6d4);
+    border:none;
 
-color:#fff;
+    border-radius:50px;
 
-font-size:17px;
+    background:linear-gradient(90deg,#2563eb,#06b6d4);
 
-cursor:pointer;
+    color:#fff;
 
-transition:.3s;
+    font-size:17px;
 
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
 }
 
 .continue-btn:hover{
 
-transform:translateY(-4px) scale(1.05);
+    transform:translateY(-4px);
 
-box-shadow:0 15px 35px rgba(37,99,235,.45);
-
+    box-shadow:0 15px 35px rgba(37,99,235,.45);
 }
+
+/* Footer */
 
 .popup-footer{
 
-margin-top:20px;
+    margin-top:20px;
 
-opacity:.75;
+    font-size:14px;
 
-font-size:14px;
-
+    opacity:.75;
 }
+
+/* Progress */
 
 .progress-bar{
 
-margin-top:20px;
+    margin-top:20px;
 
-height:5px;
+    height:5px;
 
-background:rgba(255,255,255,.15);
+    background:rgba(255,255,255,.15);
 
-border-radius:50px;
+    border-radius:50px;
 
-overflow:hidden;
-
+    overflow:hidden;
 }
 
 .progress-bar span{
 
-display:block;
+    display:block;
 
-height:100%;
+    width:100%;
 
-background:#06b6d4;
+    height:100%;
 
-width:100%;
+    background:#06b6d4;
 
-animation:progress 10s linear forwards;
-
+    animation:progress 10s linear forwards;
 }
 
-.close-popup{
+/* Scrollbar */
 
-position:absolute;
+.maintenance-popup::-webkit-scrollbar{
 
-right:20px;
-
-top:15px;
-
-font-size:30px;
-
-background:none;
-
-border:none;
-
-color:#fff;
-
-cursor:pointer;
-
+    width:6px;
 }
+
+.maintenance-popup::-webkit-scrollbar-thumb{
+
+    background:#2563eb;
+
+    border-radius:20px;
+}
+
+/* ==========================================================
+RESPONSIVE
+========================================================== */
+
+/* Tablet */
+
+@media (max-width:768px){
+
+    .maintenance-popup{
+
+        width:95%;
+
+        padding:30px 22px;
+    }
+
+    .popup-icon{
+
+        font-size:55px;
+    }
+
+    .maintenance-popup h2{
+
+        font-size:28px;
+    }
+
+    .subtitle{
+
+        font-size:16px;
+    }
+
+    .maintenance-popup p,
+    .maintenance-popup li{
+
+        font-size:15px;
+    }
+
+    .contact-box{
+
+        padding:16px;
+    }
+
+    .continue-btn{
+
+        width:100%;
+    }
+}
+
+/* Mobile */
+
+@media (max-width:576px){
+
+    .maintenance-overlay{
+
+        padding:12px;
+    }
+
+    .maintenance-popup{
+
+        width:100%;
+
+        max-height:92vh;
+
+        border-radius:18px;
+
+        padding:24px 18px;
+    }
+
+    .popup-icon{
+
+        font-size:46px;
+    }
+
+    .maintenance-popup h2{
+
+        font-size:22px;
+    }
+
+    .subtitle{
+
+        font-size:15px;
+    }
+
+    .maintenance-popup p,
+    .maintenance-popup li{
+
+        font-size:14px;
+
+        line-height:1.7;
+    }
+
+    .contact-box{
+
+        padding:14px;
+    }
+
+    .contact-box strong{
+
+        font-size:16px;
+    }
+
+    .contact-box a{
+
+        display:block;
+
+        margin-top:8px;
+
+        font-size:14px;
+    }
+
+    .continue-btn{
+
+        width:100%;
+
+        font-size:15px;
+
+        padding:14px;
+    }
+
+    .popup-footer{
+
+        font-size:12px;
+    }
+
+    .close-popup{
+
+        width:38px;
+
+        height:38px;
+
+        font-size:24px;
+    }
+}
+
+/* Small Phones */
+
+@media (max-width:360px){
+
+    .maintenance-popup{
+
+        padding:18px 15px;
+    }
+
+    .popup-icon{
+
+        font-size:40px;
+    }
+
+    .maintenance-popup h2{
+
+        font-size:20px;
+    }
+
+    .maintenance-popup p,
+    .maintenance-popup li{
+
+        font-size:13px;
+    }
+
+    .continue-btn{
+
+        font-size:14px;
+
+        padding:12px;
+    }
+}
+
+/* ==========================================================
+ANIMATIONS
+========================================================== */
 
 @keyframes popup{
 
-0%{
+    from{
 
-opacity:0;
+        opacity:0;
 
-transform:scale(.6) rotate(-5deg);
+        transform:scale(.75) translateY(40px);
+    }
 
-}
+    to{
 
-100%{
+        opacity:1;
 
-opacity:1;
-
-transform:scale(1);
-
-}
-
+        transform:scale(1) translateY(0);
+    }
 }
 
 @keyframes fadeIn{
 
-from{opacity:0;}
+    from{
 
-to{opacity:1;}
+        opacity:0;
+    }
 
+    to{
+
+        opacity:1;
+    }
 }
 
 @keyframes rotate{
 
-to{
+    to{
 
-transform:rotate(360deg);
-
-}
-
+        transform:rotate(360deg);
+    }
 }
 
 @keyframes float{
 
-50%{
+    0%,100%{
 
-transform:translateY(-10px);
+        transform:translateY(0);
+    }
 
-}
+    50%{
 
+        transform:translateY(-10px);
+    }
 }
 
 @keyframes progress{
 
-to{
+    from{
 
-width:0;
+        width:100%;
+    }
 
-}
+    to{
 
+        width:0;
+    }
 }
