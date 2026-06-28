@@ -1506,5 +1506,41 @@ validatePhone
 };
 
 /*=========================================================
+MAINTENANCE POPUP
+=========================================================*/
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const popup = document.getElementById("maintenanceOverlay");
+    const closeBtn = document.getElementById("closePopup");
+    const continueBtn = document.getElementById("continueBtn");
+
+    // If popup doesn't exist, do nothing
+    if (!popup) return;
+
+    function closePopup() {
+        popup.style.opacity = "0";
+        popup.style.pointerEvents = "none";
+
+        setTimeout(() => {
+            popup.style.display = "none";
+        }, 500);
+
+        localStorage.setItem("yt_popup_seen", "true");
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener("click", closePopup);
+    }
+
+    if (continueBtn) {
+        continueBtn.addEventListener("click", closePopup);
+    }
+
+    // Auto close after 10 seconds
+    setTimeout(closePopup, 10000);
+
+});
+/*=========================================================
 END OF MAIN.JS
 =========================================================*/

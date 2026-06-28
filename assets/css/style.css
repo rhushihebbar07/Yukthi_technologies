@@ -4,3 +4,286 @@
 @import url("components.css");
 @import url("animations.css");
 @import url("responsive.css");
+/* ==========================
+Maintenance Popup
+========================== */
+
+.maintenance-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(5,10,25,.82);
+    backdrop-filter:blur(12px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:999999;
+    animation:fadeIn .7s ease;
+}
+
+.maintenance-popup{
+
+    width:90%;
+    max-width:620px;
+
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    border-radius:25px;
+
+    padding:40px;
+
+    text-align:center;
+
+    color:#fff;
+
+    position:relative;
+
+    overflow:hidden;
+
+    animation:popup .8s cubic-bezier(.175,.885,.32,1.3);
+}
+
+.maintenance-popup::before{
+
+content:"";
+
+position:absolute;
+
+top:-50%;
+
+left:-50%;
+
+width:200%;
+
+height:200%;
+
+background:linear-gradient(45deg,#2563eb,#06b6d4,#7c3aed,#2563eb);
+
+animation:rotate 10s linear infinite;
+
+opacity:.12;
+
+}
+
+.maintenance-popup>*{
+position:relative;
+z-index:2;
+}
+
+.popup-icon{
+
+font-size:70px;
+
+animation:float 3s infinite;
+
+margin-bottom:15px;
+
+}
+
+.maintenance-popup h2{
+
+font-size:34px;
+
+margin-bottom:15px;
+
+font-weight:800;
+
+}
+
+.subtitle{
+
+font-size:18px;
+
+opacity:.9;
+
+margin-bottom:20px;
+
+}
+
+.maintenance-popup ul{
+
+list-style:none;
+
+padding:0;
+
+margin:25px 0;
+
+}
+
+.maintenance-popup li{
+
+padding:8px;
+
+font-size:17px;
+
+}
+
+.contact-box{
+
+margin:25px 0;
+
+padding:18px;
+
+background:rgba(255,255,255,.08);
+
+border-radius:15px;
+
+}
+
+.contact-box a{
+
+color:#8fd3ff;
+
+font-weight:bold;
+
+text-decoration:none;
+
+}
+
+.continue-btn{
+
+margin-top:25px;
+
+padding:15px 35px;
+
+border:none;
+
+border-radius:50px;
+
+background:linear-gradient(90deg,#2563eb,#06b6d4);
+
+color:#fff;
+
+font-size:17px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.continue-btn:hover{
+
+transform:translateY(-4px) scale(1.05);
+
+box-shadow:0 15px 35px rgba(37,99,235,.45);
+
+}
+
+.popup-footer{
+
+margin-top:20px;
+
+opacity:.75;
+
+font-size:14px;
+
+}
+
+.progress-bar{
+
+margin-top:20px;
+
+height:5px;
+
+background:rgba(255,255,255,.15);
+
+border-radius:50px;
+
+overflow:hidden;
+
+}
+
+.progress-bar span{
+
+display:block;
+
+height:100%;
+
+background:#06b6d4;
+
+width:100%;
+
+animation:progress 10s linear forwards;
+
+}
+
+.close-popup{
+
+position:absolute;
+
+right:20px;
+
+top:15px;
+
+font-size:30px;
+
+background:none;
+
+border:none;
+
+color:#fff;
+
+cursor:pointer;
+
+}
+
+@keyframes popup{
+
+0%{
+
+opacity:0;
+
+transform:scale(.6) rotate(-5deg);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+@keyframes fadeIn{
+
+from{opacity:0;}
+
+to{opacity:1;}
+
+}
+
+@keyframes rotate{
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+@keyframes float{
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+}
+
+@keyframes progress{
+
+to{
+
+width:0;
+
+}
+
+}
